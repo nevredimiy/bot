@@ -4,7 +4,11 @@ require 'vendor/autoload.php';
 
 use Telegram\Bot\Api;
 
-$bot = new Api('5279038391:AAG6qViQ29IKLA9EZ9XpRBFO-80QdFJyp5s'); // замени токен
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$token = $_ENV['TELEGRAM_BOT_TOKEN'];
+$bot = new Api($token);
 
 $update = $bot->getWebhookUpdate();
 $message = $update->getMessage();
