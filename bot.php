@@ -18,7 +18,7 @@ if (!$message) {
 }
 
 $text = mb_strtolower($message->getText());
-$keywords = ['оплата', 'важно', 'срочно', 'долг'];
+$keywords = ['taxi', 'pay', 'оплата', 'важно', 'срочно', 'долг'];
 
 foreach ($keywords as $word) {
     if (strpos($text, $word) !== false) {
